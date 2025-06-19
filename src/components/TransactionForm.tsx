@@ -129,7 +129,7 @@ const TransactionForm = ({ onClose, onAdd }: TransactionFormProps) => {
             </div>
 
             <div className="flex gap-2 pt-4">
-              <Button type="button" variant="outline" onClick={onClose} className="flex-1 border-slate-600 text-slate-200 hover:bg-slate-700 hover:text-white">
+              <Button type="button" variant="outline" onClick={onClose} className="flex-1 border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white">
                 Cancelar
               </Button>
               <Button 
