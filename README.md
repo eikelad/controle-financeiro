@@ -24,6 +24,14 @@ Um sistema simples e intuitivo de controle financeiro pessoal, desenvolvido com 
 
 ---
 
+## 🔗 Acesso ao Projeto
+
+Você pode acessar o projeto online clicando no link abaixo:
+
+👉 [Acessar aplicação](https://controle-financeiro-p1zvei6rm-eikelads-projects.vercel.app/) 
+
+---
+
 ## 📸 Demonstração
 
 ![Dashboard de Controle Financeiro](./public/dashboard.png) 
