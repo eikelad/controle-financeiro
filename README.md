@@ -26,7 +26,7 @@ Um sistema simples e intuitivo de controle financeiro pessoal, desenvolvido com 
 
 ## 📸 Demonstração
 
-![Dashboard de Controle Financeiro](./demo/dashboard.png) 
+![Dashboard de Controle Financeiro](./public/dashboard.png) 
 
 ---
 
