@@ -70,112 +70,110 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <div className="container mx-auto px-4 py-6 sm:py-8">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent mb-2">
             Controle Financeiro
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-slate-300">
             Gerencie suas finanças de forma simples e eficiente
           </p>
         </div>
 
         {/* Financial Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-            <CardContent className="p-6 text-center">
-              <Wallet className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-              <h3 className="text-2xl font-bold text-gray-800">{formatCurrency(saldo)}</h3>
-              <p className="text-sm text-gray-600">Saldo Atual</p>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <Card className="bg-slate-800/50 backdrop-blur-lg border-slate-700/50 hover:bg-slate-800/70 transition-all duration-300 hover:scale-105">
+            <CardContent className="p-4 sm:p-6 text-center">
+              <Wallet className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400 mx-auto mb-2" />
+              <h3 className="text-lg sm:text-2xl font-bold text-white">{formatCurrency(saldo)}</h3>
+              <p className="text-xs sm:text-sm text-slate-400">Saldo Atual</p>
             </CardContent>
           </Card>
           
-          <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-            <CardContent className="p-6 text-center">
-              <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-2" />
-              <h3 className="text-2xl font-bold text-gray-800">{formatCurrency(totalReceitas)}</h3>
-              <p className="text-sm text-gray-600">Total Receitas</p>
+          <Card className="bg-slate-800/50 backdrop-blur-lg border-slate-700/50 hover:bg-slate-800/70 transition-all duration-300 hover:scale-105">
+            <CardContent className="p-4 sm:p-6 text-center">
+              <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-400 mx-auto mb-2" />
+              <h3 className="text-lg sm:text-2xl font-bold text-white">{formatCurrency(totalReceitas)}</h3>
+              <p className="text-xs sm:text-sm text-slate-400">Receitas</p>
             </CardContent>
           </Card>
           
-          <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-            <CardContent className="p-6 text-center">
-              <TrendingDown className="h-8 w-8 text-red-600 mx-auto mb-2" />
-              <h3 className="text-2xl font-bold text-gray-800">{formatCurrency(totalDespesas)}</h3>
-              <p className="text-sm text-gray-600">Total Despesas</p>
+          <Card className="bg-slate-800/50 backdrop-blur-lg border-slate-700/50 hover:bg-slate-800/70 transition-all duration-300 hover:scale-105">
+            <CardContent className="p-4 sm:p-6 text-center">
+              <TrendingDown className="h-6 w-6 sm:h-8 sm:w-8 text-red-400 mx-auto mb-2" />
+              <h3 className="text-lg sm:text-2xl font-bold text-white">{formatCurrency(totalDespesas)}</h3>
+              <p className="text-xs sm:text-sm text-slate-400">Despesas</p>
             </CardContent>
           </Card>
           
-          <Card className="bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-            <CardContent className="p-6 text-center">
-              <Receipt className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-              <h3 className="text-2xl font-bold text-gray-800">{transactions.length}</h3>
-              <p className="text-sm text-gray-600">Transações</p>
+          <Card className="bg-slate-800/50 backdrop-blur-lg border-slate-700/50 hover:bg-slate-800/70 transition-all duration-300 hover:scale-105">
+            <CardContent className="p-4 sm:p-6 text-center">
+              <Receipt className="h-6 w-6 sm:h-8 sm:w-8 text-purple-400 mx-auto mb-2" />
+              <h3 className="text-lg sm:text-2xl font-bold text-white">{transactions.length}</h3>
+              <p className="text-xs sm:text-sm text-slate-400">Transações</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Quick Actions */}
-        <div className="mb-8">
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <DollarSign className="h-5 w-5 text-green-600" />
+        <div className="mb-6 sm:mb-8">
+          <Card className="bg-slate-800/50 backdrop-blur-lg border-slate-700/50">
+            <CardHeader className="pb-4">
+              <CardTitle className="flex items-center gap-2 text-white text-lg sm:text-xl">
+                <DollarSign className="h-5 w-5 text-emerald-400" />
                 Ações Rápidas
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex gap-4">
-                <Button 
-                  className="flex items-center gap-2 bg-green-600 hover:bg-green-700"
-                  onClick={() => setShowTransactionForm(true)}
-                >
-                  <PlusCircle className="h-4 w-4" />
-                  Nova Transação
-                </Button>
-              </div>
+              <Button 
+                className="w-full sm:w-auto flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 border-0 text-white shadow-lg"
+                onClick={() => setShowTransactionForm(true)}
+              >
+                <PlusCircle className="h-4 w-4" />
+                Nova Transação
+              </Button>
             </CardContent>
           </Card>
         </div>
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="dashboard" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-            <TabsTrigger value="transactions">Transações</TabsTrigger>
-            <TabsTrigger value="reports">Relatórios</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 bg-slate-800/50 border-slate-700">
+            <TabsTrigger value="dashboard" className="data-[state=active]:bg-slate-700 data-[state=active]:text-white text-slate-300">Dashboard</TabsTrigger>
+            <TabsTrigger value="transactions" className="data-[state=active]:bg-slate-700 data-[state=active]:text-white text-slate-300">Transações</TabsTrigger>
+            <TabsTrigger value="reports" className="data-[state=active]:bg-slate-700 data-[state=active]:text-white text-slate-300">Relatórios</TabsTrigger>
           </TabsList>
 
           <TabsContent value="dashboard" className="space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <FinancialChart transactions={transactions} />
               
-              <Card className="bg-white/80 backdrop-blur-sm">
+              <Card className="bg-slate-800/50 backdrop-blur-lg border-slate-700/50">
                 <CardHeader>
-                  <CardTitle>Últimas Transações</CardTitle>
+                  <CardTitle className="text-white text-lg sm:text-xl">Últimas Transações</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
                     {transactions.slice(-5).reverse().map((transaction) => (
-                      <div key={transaction.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div key={transaction.id} className="flex items-center justify-between p-3 bg-slate-700/50 rounded-lg border border-slate-600/30">
                         <div className="flex items-center gap-3">
                           {transaction.type === 'receita' ? (
-                            <TrendingUp className="h-4 w-4 text-green-600" />
+                            <TrendingUp className="h-4 w-4 text-emerald-400" />
                           ) : (
-                            <TrendingDown className="h-4 w-4 text-red-600" />
+                            <TrendingDown className="h-4 w-4 text-red-400" />
                           )}
-                          <div>
-                            <p className="font-medium">{transaction.description}</p>
-                            <p className="text-sm text-gray-600">{transaction.category}</p>
+                          <div className="min-w-0 flex-1">
+                            <p className="font-medium text-white text-sm sm:text-base truncate">{transaction.description}</p>
+                            <p className="text-xs sm:text-sm text-slate-400">{transaction.category}</p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className={`font-bold ${transaction.type === 'receita' ? 'text-green-600' : 'text-red-600'}`}>
+                          <p className={`font-bold text-sm sm:text-base ${transaction.type === 'receita' ? 'text-emerald-400' : 'text-red-400'}`}>
                             {transaction.type === 'receita' ? '+' : '-'}{formatCurrency(transaction.amount)}
                           </p>
-                          <p className="text-sm text-gray-600">{transaction.date}</p>
+                          <p className="text-xs text-slate-400">{new Date(transaction.date).toLocaleDateString('pt-BR')}</p>
                         </div>
                       </div>
                     ))}
@@ -194,12 +192,12 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="reports">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <FinancialChart transactions={transactions} />
               
-              <Card className="bg-white/80 backdrop-blur-sm">
+              <Card className="bg-slate-800/50 backdrop-blur-lg border-slate-700/50">
                 <CardHeader>
-                  <CardTitle>Gastos por Categoria</CardTitle>
+                  <CardTitle className="text-white text-lg sm:text-xl">Gastos por Categoria</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
@@ -212,8 +210,8 @@ const Index = () => {
                         }, {} as Record<string, number>)
                     ).map(([category, amount]) => (
                       <div key={category} className="flex items-center justify-between">
-                        <span className="font-medium">{category}</span>
-                        <Badge variant="secondary">{formatCurrency(amount)}</Badge>
+                        <span className="font-medium text-white">{category}</span>
+                        <Badge variant="secondary" className="bg-slate-700 text-slate-200 border-slate-600">{formatCurrency(amount)}</Badge>
                       </div>
                     ))}
                   </div>
